@@ -5,7 +5,8 @@
 
 ;; Load bindings config
 (live-load-config-file "bindings.el")
+(live-load-config-file "same-window.el")
 (live-load-config-file "core.el")
 (live-load-config-file "blackbored.el")
 (live-load-config-file "org-config.el")
-(color-theme-blackbored)
+;;(color-theme-blackbored)

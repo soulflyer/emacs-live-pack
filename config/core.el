@@ -4,8 +4,6 @@
 (require 'iy-go-to-char)
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
 
-
-
 (require 'mu4e)
 ;;(require 'notmuch)
 (setq
@@ -21,31 +19,6 @@
 ;; (setq mu4e-html2text-command
 ;;       "textutil -stdin -format html -convert txt -stdout")
 ;;(mu4e-maildirs-extension)
-
-;;(setq same-window-regexps '("."))
-;;(setq same-window-regexps nil)
-;;(add-to-list 'same-window-regexps ".")
-
-(setq ns-pop-up-frames nil)
-(add-to-list 'same-window-regexps "\*Help\*")
-(add-to-list 'same-window-regexps "\*rake\*")
-(add-to-list 'same-window-regexps "\*Apropos\*")
-(add-to-list 'same-window-regexps "\*compilation\*")
-(add-to-list 'same-window-regexps "\*ruby\*")
-(add-to-list 'same-window-regexps "\*rails\*")
-(add-to-list 'same-window-regexps "\*Shell Command Output\*")
-(add-to-list 'same-window-regexps "\*grep\*")
-(add-to-list 'same-window-regexps "*.erb")
-(add-to-list 'same-window-regexps "\*Backtrace\*")
-(add-to-list 'same-window-regexps "\*nrepl\*")
-(add-to-list 'same-window-regexps "\*Colors\*")
-(add-to-list 'same-window-regexps "\*Org Agenda\*")
-(add-to-list 'same-window-regexps "\*magit\*")
-(add-to-list 'same-window-regexps "\*cider-repl\*")
-(add-to-list 'same-window-regexps "\*cider-doc\*")
-(add-to-list 'same-window-regexps "\*cider-result\*")
-(add-to-list 'same-window-regexps "\*YASnippet tables\*")
-;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
