@@ -1,6 +1,12 @@
-## User Pack Template
+## Iain's pack
 
-This is a template for your own user (or other purpose) pack.
+### Changes to emacs-live
+
+In order for the one window only thing to work, popwin must not be 
+installed. To do this, comment out the following line in 
+packs/stable/foundation-pack/init.el
+
+(live-load-config-file "popwin-conf.el")
 
 ### init.el
 
