@@ -39,7 +39,7 @@
 
 
      ;;(show-paren-match ((((class color) (background dark)) (:background "red"))))
-     (show-paren-match ((t (:background "color-18"))))
+     (show-paren-match ((t (:background "color-236"))))
 
      (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
      (font-lock-comment-face ((t (:italic t :foreground "#8B8989"))))
