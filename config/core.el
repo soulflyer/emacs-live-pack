@@ -7,9 +7,6 @@
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
 
-(setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-auto-closing t)
-
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))
@@ -20,7 +17,6 @@
 
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
-(require 'scss-mode)
 
 (require 'inf-ruby)
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
@@ -42,6 +38,7 @@
                             (lambda (_ _) nil))
                (enable-paredit-mode))))
 
+(require 'scss-mode)
 (require 'sws-mode)
 (require 'jade-mode)
 (require 'feature-mode)
@@ -55,21 +52,6 @@
 (setq auto-save-default nil) ; stop creating those #autosave# files
 (setq backup-inhibited t);
 
-;; Function to open and goto indented next line
-(defun open-next-line()
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-;; Add file creation to dired
-(defun dired-make-file (new-file-name)
-  (interactive "sFile name: ")
-  (shell-command (concat "touch " new-file-name))
-  (message "created %s" new-file-name)
-  (message "major mode %s" major-mode)
-  (if (string= major-mode "dired-mode")
-      (revert-buffer)))
-
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -79,6 +61,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-auto-closing t)
+
 ;; (require 'json-mode)
 
 (autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)

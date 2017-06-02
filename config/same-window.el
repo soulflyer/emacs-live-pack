@@ -7,7 +7,9 @@
   (interactive)
   nil)
 
-(setq split-window-preferred-function 'no-split-window)
+;; Don't do this or undo-tree becomes useless
+;;(setq split-window-preferred-function 'no-split-window)
+(setq split-window-preferred-function 'split-window-sensibly)
 
 (setq ns-pop-up-frames nil)
 (setq ns-pop-up-windows nil)
