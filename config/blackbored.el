@@ -1,3 +1,5 @@
+;;; package --- Summary
+;;; Commentary:
 ;; Blackbored Colour Theme for Emacs.
 ;;
 ;; Defines a colour scheme resembling that of the original TextMate Blackboard colour theme.
@@ -16,9 +18,10 @@
 
 (require 'color-theme)
 
+;;; Code:
 ;;;###autoload
 (defun color-theme-blackbored ()
-  "Color theme by Sam Aaron, based off BlackBoard by JD Huntington based off the TextMate Blackboard theme, created 2008-11-27"
+  "Color theme by Sam Aaron, based off BlackBoard by JD Huntington based off the TextMate Blackboard theme, created 2008-11-27."
   (interactive)
   (color-theme-install
    '(color-theme-blackbored
@@ -30,7 +33,7 @@
       (mouse-color . "sienna1"))
 
      (hl-line ((t (:background "#101010"))))
-     (default ((t (:background "black" :foreground "#A9A9A9"))))
+     (default ((t (:background "black" :foreground "#b2b2d0"))))
      (blue ((t (:foreground "blue"))))
      (bold ((t (:bold t))))
      (bold-italic ((t (:bold t))))
@@ -42,7 +45,7 @@
      (show-paren-match ((t (:background "color-236"))))
 
      (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
-     (font-lock-comment-face ((t (:italic t :foreground "#8B8989"))))
+     (font-lock-comment-face ((t (:italic t :foreground "#aaa8a8"))))
      (font-lock-constant-face ((t (:foreground "#D8FA3C"))))
      (font-lock-doc-string-face ((t (:foreground "DarkOrange"))))
      (font-lock-function-name-face ((t (:foreground "magenta"))))

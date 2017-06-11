@@ -83,6 +83,7 @@
 
 (setq default-tab-width 2)
 (setq cider-repl-history-file "~/.cider-history")
+(setq clojure-indent-style :align-arguments)
 
 (beacon-mode 1)
 

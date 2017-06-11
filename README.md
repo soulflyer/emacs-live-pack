@@ -8,6 +8,9 @@ packs/stable/foundation-pack/init.el
 
 (live-load-config-file "popwin-conf.el")
 
+Also get rid of the outdated version of refactor-nrepl in the Clojure
+pack. Comment out the last section of cider-conf.el
+
 ### init.el
 
 Use the file `init.el` for your own configuration elisp. If this starts

@@ -13,4 +13,5 @@
 (live-load-config-file "mail.el")
 (live-load-config-file "grep.el")
 (live-load-config-file "rocks.el")
+(live-load-config-file "refactor.el")
 (color-theme-blackbored)

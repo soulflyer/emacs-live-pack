@@ -1,3 +1,5 @@
+;;; package --- Summary
+;;; Commentary:
 ;; Place your bindings here.♯
 ;;; Code:
 ;; For example:
@@ -21,15 +23,16 @@
 ;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 (add-hook 'css-mode-hook 'my-css-mods)
 (defun my-css-mods ()
+  ;;
   (define-key css-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
 
 (add-hook 'sgml-mode-hook 'my-sgml-mods)
 (defun my-sgml-mods ()
-  "Add to sgml mode"
+  "Add to sgml mode."
   (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
   (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line)
   (define-key sgml-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
-(message "hello 1")
+
 (defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
@@ -65,4 +68,5 @@
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)
-;;;bindings.el ends here
+(provide 'bindings)
+;;; bindings.el ends here
