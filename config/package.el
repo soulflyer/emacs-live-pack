@@ -1,3 +1,6 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (require 'package)
 
 (add-to-list 'package-archives
@@ -20,4 +23,6 @@
 (package-install 'sws-mode)
 (package-install 'jade-mode)
 (package-install 'feature-mode)
-(package-install 'clj-refactor)
+;;(package-install 'clj-refactor)
+
+;;; package.el ends here

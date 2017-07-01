@@ -1,6 +1,7 @@
 ;;; package --- summary:
 ;;; Commentary:
 ;;; Code:
+(setq-default flycheck-emacs-lisp-load-path 'inherit)
 (require 'iy-go-to-char)
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
 
@@ -14,6 +15,9 @@
 
 (require 'openwith)
 (openwith-mode t)
+(setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\)\\'" "open" (file))
+                              ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))))
+
 
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
@@ -27,6 +31,7 @@
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 (add-hook 'ruby-mode-hook 'paredit-mode)
+(add-hook 'web-mode-hook 'zencoding-mode)
 
 ;; Enable paredit for a couple for non lisp modes; tweak
 ;; paredit-space-for-delimiter-predicates to avoid inserting spaces
@@ -85,8 +90,15 @@
 (setq cider-repl-history-file "~/.cider-history")
 (setq clojure-indent-style :align-arguments)
 
+;; Cleanup ibuffer display so I can tell which file is which
+(setq ibuffer-formats '((mark modified read-only git-status-mini " "
+                              (size 5 -1 :left :elide)
+                              (name))
+                        (mark filename)))
+
 (beacon-mode 1)
 
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
+
 ;;; core.el ends here

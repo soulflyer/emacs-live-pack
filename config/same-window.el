@@ -1,9 +1,13 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (message "loading same-window.el")
 ;;(setq same-window-regexps '("."))
 ;;(setq same-window-regexps nil)
 ;;(add-to-list 'same-window-regexps ".")
 
 (defun no-split-window ()
+  "Documentation."
   (interactive)
   nil)
 
@@ -32,4 +36,6 @@
 (add-to-list 'same-window-regexps "\*cider-doc\*")
 (add-to-list 'same-window-regexps "\*cider-result\*")
 (add-to-list 'same-window-regexps "\*YASnippet tables\*")
+(add-to-list 'same-window-regexps "\*cider-doc\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
+;;; same-window.el ends here

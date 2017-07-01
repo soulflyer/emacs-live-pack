@@ -1,15 +1,20 @@
-;; Some stuff from emacs rocks
+;;; Package --- summary
+;;; Commentary:
+;; Some stuff from emacs-rocks
+;;; Code:
 (defun untabify-buffer ()
+  "."
   (interactive)
   (untabify (point-min) (point-max)))
 
 (defun indent-buffer ()
+  "."
   (interactive)
   (indent-region (point-min) (point-max)))
 
 (defun cleanup-buffer-safe ()
   "Perform a bunch of safe operations on the whitespace content of a buffer.
-Does not indent buffer, because it is used for a before-save-hook, and that
+Does not indent buffer, because it is used for a 'before-save-hook', and that
 might be bad."
   (interactive)
   (untabify-buffer)
@@ -24,6 +29,8 @@ Including indent-buffer, which should not be called automatically on save."
   (indent-buffer))
 
 (defadvice sgml-delete-tag (after reindent-buffer activate)
+  "."
   (cleanup-buffer))
 
 ;;end of stuff from emacs rocks
+;;; rocks.el ends here

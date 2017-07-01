@@ -13,6 +13,7 @@
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
 (define-key dired-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
+(define-key dired-mode-map (kbd "/") 'dired-up-directory)
 
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
 (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
@@ -33,7 +34,7 @@
   (define-key sgml-mode-map (kbd "C-c z") 'zencoding-expand-line)
   (define-key sgml-mode-map (kbd "RET") 'reindent-then-newline-and-indent))
 
-(defvar diw-minor-mode-map (make-keymap) "diw-minor-mode keymap")
+(defvar diw-minor-mode-map (make-keymap) "D diw-minor-mode keymap.")
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
 (define-key diw-minor-mode-map  (kbd "C-M-0") 'paredit-forward-barf-sexp)
