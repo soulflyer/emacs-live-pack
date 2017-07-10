@@ -37,5 +37,9 @@
 (add-to-list 'same-window-regexps "\*cider-result\*")
 (add-to-list 'same-window-regexps "\*YASnippet tables\*")
 (add-to-list 'same-window-regexps "\*cider-doc\*")
+(add-to-list 'same-window-regexps "\*cider-error\*")
+(add-to-list 'same-window-regexps "\*cider-connections\*")
+(add-to-list 'same-window-regexps "\*cider-classpath\*")
+(add-to-list 'same-window-regexps "\*cider-ns-browser\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 ;;; same-window.el ends here

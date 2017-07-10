@@ -9,6 +9,9 @@
 (global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
+(global-set-key "\C-c=" 'v-resize)
+
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
@@ -66,6 +69,7 @@
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
 ;;(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
 (define-key diw-minor-mode-map  (kbd "C-c q") 'cider-quit)
+
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)

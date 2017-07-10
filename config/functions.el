@@ -16,4 +16,16 @@
   (if (string= major-mode "dired-mode")
       (revert-buffer)))
 
+(defun v-resize (key)
+   "Interactively resize the window.  KEY."
+   (interactive "cHit +/- to enlarge/shrink")
+     (cond
+       ((eq key (string-to-char "+"))
+        (enlarge-window 1)
+        (call-interactively 'v-resize))
+       ((eq key (string-to-char "-"))
+        (enlarge-window -1)
+          (call-interactively 'v-resize))
+       (t (push key unread-command-events))))
+
 ;;; functions.el ends here

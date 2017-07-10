@@ -88,7 +88,11 @@
 
 (setq default-tab-width 2)
 (setq cider-repl-history-file "~/.cider-history")
+(setq cider-prompt-for-symbol nil)
 (setq clojure-indent-style :align-arguments)
+;; Colourize all fns known to be defined, not just clojure core
+;; might want to add deprecated to the list?
+;;(setq cider-font-lock-dynamically '(macro core function var))
 
 ;; Cleanup ibuffer display so I can tell which file is which
 (setq ibuffer-formats '((mark modified read-only git-status-mini " "
