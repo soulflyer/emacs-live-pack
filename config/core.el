@@ -89,7 +89,12 @@
 (setq default-tab-width 2)
 (setq cider-repl-history-file "~/.cider-history")
 (setq cider-prompt-for-symbol nil)
+(setq cider-show-error-buffer nil)
 (setq clojure-indent-style :align-arguments)
+(setq cider-cljs-lein-repl
+      "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
 ;; Colourize all fns known to be defined, not just clojure core
 ;; might want to add deprecated to the list?
 ;;(setq cider-font-lock-dynamically '(macro core function var))
