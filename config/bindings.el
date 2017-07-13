@@ -67,9 +67,10 @@
 (define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
 (define-key diw-minor-mode-map  (kbd "C-h") 'help)
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
+(define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
 ;;(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
 (define-key diw-minor-mode-map  (kbd "C-c q") 'cider-quit)
-
+(define-key diw-minor-mode-map  (kbd "C-M-\\") 'paredit-reindent-defun)
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)
