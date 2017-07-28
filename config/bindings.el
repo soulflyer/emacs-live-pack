@@ -11,6 +11,9 @@
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
 (global-set-key "\C-c=" 'v-resize)
+(global-set-key (kbd "C-c -") 'v-resize)
+
+(global-set-key (kbd "C-o") 'avy-goto-char-timer)
 
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
@@ -40,8 +43,7 @@
 (defvar diw-minor-mode-map (make-keymap) "D diw-minor-mode keymap.")
 (define-key diw-minor-mode-map  (kbd "M-RET") 'open-next-line)
 (define-key diw-minor-mode-map  (kbd "M-DEL") 'kill-whole-line)
-(define-key diw-minor-mode-map  (kbd "C-M-0") 'paredit-forward-barf-sexp)
-
+(define-key diw-minor-mode-map  (kbd "C-o") 'avy-goto-char-timer)
 (define-key diw-minor-mode-map  (kbd "C-x k") 'kill-this-buffer)
 (define-key diw-minor-mode-map  (kbd "s-w") 'delete-frame)
 

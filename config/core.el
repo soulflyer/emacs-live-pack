@@ -105,7 +105,8 @@
                               (name))
                         (mark filename)))
 
-(beacon-mode 1)
+;; Highlight the cursor on focus. Can make it hard to read the current line.
+;;(beacon-mode 1)
 
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
