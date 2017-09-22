@@ -10,9 +10,9 @@
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
-(global-set-key "\C-c=" 'v-resize)
 (global-set-key (kbd "C-c -") 'v-resize)
-
+(global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
+(global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-o") 'avy-goto-char-timer)
 
 ;; This line may make all the other RET redefines unnecessary....
@@ -72,7 +72,7 @@
 (define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
 ;;(define-key diw-minor-mode-map  (kbd "C-c ]") 'paredit-backward)
 (define-key diw-minor-mode-map  (kbd "C-c q") 'cider-quit)
-(define-key diw-minor-mode-map  (kbd "C-M-\\") 'paredit-reindent-defun)
+;;(define-key diw-minor-mode-map  (kbd "C-M-\\") 'paredit-reindent-defun)
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
   t " diw" 'diw-minor-mode-map)
