@@ -28,6 +28,9 @@
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
+
+(define-key org-mode-map (kbd "C-c C-c") 'org-capture-finalize)
+(define-key org-mode-map (kbd "C-c C-k") 'org-capture-kill)
 (add-hook 'css-mode-hook 'my-css-mods)
 (defun my-css-mods ()
   ;;
@@ -55,7 +58,8 @@
 (define-key diw-minor-mode-map  (kbd "C-x b") 'ido-switch-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-r") 'recentf-open-files)
 (define-key diw-minor-mode-map  (kbd "C-x w") 'delete-window)
-(define-key diw-minor-mode-map  (kbd "C-c c") 'clipboard-kill-ring-save)
+;;(define-key diw-minor-mode-map  (kbd "C-c c") 'clipboard-kill-ring-save)
+;;(define-key diw-minor-mode-map  (kbd "C-c c") 'org-capture)
 (define-key diw-minor-mode-map  (kbd "C-c v") 'clipboard-yank)
 (define-key diw-minor-mode-map  (kbd "C-x C-n") 'switch-to-next-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-p") 'switch-to-prev-buffer)

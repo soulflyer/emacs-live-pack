@@ -15,6 +15,7 @@
 ;;(setq split-window-preferred-function 'no-split-window)
 (setq split-window-preferred-function 'split-window-sensibly)
 
+(setq org-link-frame-setup '((file . find-file)))
 (setq ns-pop-up-frames nil)
 (setq ns-pop-up-windows nil)
 (add-to-list 'same-window-regexps "\*Help\*")
