@@ -42,5 +42,6 @@
 (add-to-list 'same-window-regexps "\*cider-connections\*")
 (add-to-list 'same-window-regexps "\*cider-classpath\*")
 (add-to-list 'same-window-regexps "\*cider-ns-browser\*")
+(add-to-list 'same-window-regexps "\*Faces\*")
 ;;(add-to-list 'org-file-apps '("\\.jpg\\'" . default) t)
 ;;; same-window.el ends here

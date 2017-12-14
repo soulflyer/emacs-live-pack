@@ -1,15 +1,16 @@
 ;;; package --- Summary:
 ;;; Commentary:
 (require 'mu4e)
-;;(require 'notmuch)
+(require 'notmuch)
 ;;; Code:
 (setq
  mu4e-maildir "~/Mail"
- mu4e-sent-folder "/INBOX.sent"
- mu4e-trash-folder "/INBOX.trash"
+ mu4e-sent-folder "/INBOX.Sent"
+ mu4e-trash-folder "/INBOX.Trash"
  mu4e-confirm-quit nil
  mu4e-view-show-images t
- mu4e-use-fancy-chars nil)
+ mu4e-use-fancy-chars nil
+ mu4e-split-view nil)
 
 (setq mu4e-headers-fields
       '((:to . 12 )
@@ -18,8 +19,16 @@
         (:from          .  22)
         (:subject       .  nil)))
 
-(add-to-list 'mu4e-headers-actions
-              '("in browser" . mu4e-action-view-in-browser) t)
+(setq mu4e-maildir-shortcuts
+      `(("/INBOX.Archives.2017" . ?a)
+        ("/INBOX"               . ?i)
+        ("/INBOX.Junk"          . ?s)))
+
+;; fix up the display of html messages in mu4e
+(setq shr-color-visible-luminance-min 85)
+
+;; (add-to-list 'mu4e-headers-actions
+;;               '("in browser" . mu4e-action-view-in-browser) t)
 (add-to-list 'mu4e-view-actions
               '("in browser" . mu4e-action-view-in-browser) t)
 ;; (setq mu4e-html2text-command
@@ -34,11 +43,12 @@
       smtpmail-smtp-server "mail.soulflyer.co.uk"
       smtpmail-smtp-user "iain+soulflyer.co.uk"
       smtpmail-stream-type `ssl)
-;; (setq smtpmail-smtp-server "helo.nocdirect.com")
+
 ;; (setq smtpmail-debug-info t)
 ;; (setq smtpmail-debug-verb t)
 ;; (setq starttls-use-gnutls t)
 ;; (setq auth-source-debug `trivia)
-(require 'notmuch)
+
+(set-face-attribute 'mu4e-header-highlight-face nil :underline nil :bold nil :background "#00005f")
 
 ;;; mail.el ends here
