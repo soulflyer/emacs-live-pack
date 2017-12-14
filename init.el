@@ -10,7 +10,7 @@
 (live-load-config-file "same-window.el")
 (live-load-config-file "blackbored.el")
 (live-load-config-file "org-config.el")
-;;(live-load-config-file "mail.el")
+(live-load-config-file "mail.el")
 (live-load-config-file "grep.el")
 (live-load-config-file "rocks.el")
 (live-load-config-file "refactor.el")

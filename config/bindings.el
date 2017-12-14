@@ -29,7 +29,7 @@
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 ;;(define-key scss-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
 
-(define-key org-mode-map (kbd "C-c C-c") 'org-capture-finalize)
+;;(define-key org-mode-map (kbd "C-c C-c") 'org-capture-finalize)
 (define-key org-mode-map (kbd "C-c C-k") 'org-capture-kill)
 (add-hook 'css-mode-hook 'my-css-mods)
 (defun my-css-mods ()
@@ -70,7 +70,7 @@
 (define-key diw-minor-mode-map  (kbd "M-M") 'iy-go-to-char-backward)
 (define-key diw-minor-mode-map  (kbd "C-@") 'er/expand-region)
 (define-key diw-minor-mode-map  (kbd "M-2") 'er/contract-region)
-(define-key diw-minor-mode-map  (kbd "C-c o") 'org-todo-list)
+(define-key diw-minor-mode-map  (kbd "C-c o") 'org-agenda)
 (define-key diw-minor-mode-map  (kbd "C-h") 'help)
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
 (define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
