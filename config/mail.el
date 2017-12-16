@@ -10,7 +10,8 @@
  mu4e-confirm-quit nil
  mu4e-view-show-images t
  mu4e-use-fancy-chars nil
- mu4e-split-view nil)
+ mu4e-split-view nil
+ mu4e-headers-sort-direction "descending")
 
 (add-to-list 'mu4e-header-info-custom
              '(:real-to .
@@ -58,6 +59,10 @@
   '((t :foreground "#0000e8"))
   "Face for mail headers to iain@wiserobot.com"
   :group 'basic-faces)
+(defface email-hotmail
+  '((t :foreground "#7840f8"))
+  "Face for mail headers to D_I_Wood@hotmail.com"
+  :group 'basic-faces)
 
 
 (setq email-public-face `email-public)
@@ -65,13 +70,15 @@
 (setq email-iain-face 'email-iain)
 (setq email-photos-face 'email-photos)
 (setq email-wiserobot-face 'email-wiserobot)
+(setq email-hotmail-face 'email-hotmail)
 
 (setq header-highlights
       '((".*public@soulflyer.*" . email-public-face)
         (".*teacher@soulflyer.*" . email-teacher-face)
         (".*iain@soulflyer.*" . email-iain-face)
         (".*photos@soulflyer.*" . email-photos-face)
-        (".*iain@wiserobot.com.*" . email-wiserobot-face)))
+        (".*iain@wiserobot.com.*" . email-wiserobot-face)
+        (".*@hotmail.com.*" . email-hotmail-face)))
 
 (add-hook 'mu4e-headers-mode-hook
           (lambda ()
