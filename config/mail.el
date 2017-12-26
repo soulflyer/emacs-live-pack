@@ -3,7 +3,9 @@
 (require 'mu4e)
 (require 'notmuch)
 ;;; Code:
+
 (setq
+ mail-user-agent 'mu4e-user-agent
  mu4e-maildir "~/Mail"
  mu4e-sent-folder "/INBOX.Sent"
  mu4e-trash-folder "/INBOX.Trash"
@@ -11,8 +13,12 @@
  mu4e-view-show-images t
  mu4e-use-fancy-chars nil
  mu4e-split-view nil
- mu4e-headers-sort-direction "descending")
+ mu4e-headers-sort-direction "descending"
+ mu4e-get-mail-command "offlineimap"
+ message-kill-buffer-on-exit t)
 
+(mu4e-maildirs-extension)
+(setq mu4e-maildirs-extension-fake-maildir-separator ".")
 (add-to-list 'mu4e-header-info-custom
              '(:real-to .
                         (:name "Real :to Address"
@@ -20,6 +26,8 @@
                                :help ":to address without any aliases"
                                :function (lambda (msg)
                                            (cdr (nth 0 (mu4e-message-field msg :to)))))))
+
+(define-key mu4e-headers-mode-map (kbd "SPC") 'mu4e-headers-view-message)
 
 (setq mu4e-headers-fields
       '((:human-date .  12)
@@ -31,7 +39,7 @@
 (setq mu4e-maildir-shortcuts
       `(("/INBOX.Archives.2017" . ?a)
         ("/INBOX"               . ?i)
-        ("/INBOX.Junk"          . ?s)))
+        ("/INBOX.spam"          . ?s)))
 
 ;; fix up the display of html messages in mu4e
 (setq shr-color-visible-luminance-min 85)
@@ -63,14 +71,19 @@
   '((t :foreground "#7840f8"))
   "Face for mail headers to D_I_Wood@hotmail.com"
   :group 'basic-faces)
+(defface email-me
+  '((t :foreground "#00c080"))
+  "Face for mail headers to soulflyer@me.com"
+  :group 'basic-faces)
 
 
-(setq email-public-face `email-public)
-(setq email-teacher-face 'email-teacher)
-(setq email-iain-face 'email-iain)
-(setq email-photos-face 'email-photos)
-(setq email-wiserobot-face 'email-wiserobot)
-(setq email-hotmail-face 'email-hotmail)
+(setq email-public-face `email-public
+      email-teacher-face 'email-teacher
+      email-iain-face 'email-iain
+      email-photos-face 'email-photos
+      email-wiserobot-face 'email-wiserobot
+      email-hotmail-face 'email-hotmail
+      email-me-face 'email-me)
 
 (setq header-highlights
       '((".*public@soulflyer.*" . email-public-face)
@@ -78,11 +91,11 @@
         (".*iain@soulflyer.*" . email-iain-face)
         (".*photos@soulflyer.*" . email-photos-face)
         (".*iain@wiserobot.com.*" . email-wiserobot-face)
-        (".*@hotmail.com.*" . email-hotmail-face)))
+        (".*@hotmail.com.*" . email-hotmail-face)
+        (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)))
 
 (add-hook 'mu4e-headers-mode-hook
           (lambda ()
-            (print "hello again from mu4e-headers-mode")
             (setq font-lock-defaults '(header-highlights))))
 
 (setq user-mail-address "iain@soulflyer.co.uk")

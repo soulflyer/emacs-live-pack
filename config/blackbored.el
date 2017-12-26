@@ -41,8 +41,8 @@
      (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
 
 
-     ;;(show-paren-match ((((class color) (background dark)) (:background "red"))))
-     (show-paren-match ((t (:background "color-236"))))
+     (show-paren-match ((((class color) (background dark)) (:background "#1c1c1c"))))
+     ;;(show-paren-match ((t (:background "color-236"))))
 
      (font-lock-builtin-face ((t (:foreground "#4c83ff")))) ;; light blue
      (font-lock-comment-face ((t (:italic t :foreground "#aaa8a8"))))
