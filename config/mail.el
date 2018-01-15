@@ -52,7 +52,7 @@
   "Face for mail headers to public@soulflyer.co.uk"
   :group `basic-faces)
 (defface email-teacher
-  '((t :foreground "#9f009f"))
+  '((t :foreground "#cf009f"))
   "Face for mail headers to Teacher@soulflyer.co.uk"
   :group 'basic-faces)
 (defface email-iain
@@ -68,12 +68,16 @@
   "Face for mail headers to iain@wiserobot.com"
   :group 'basic-faces)
 (defface email-hotmail
-  '((t :foreground "#7840f8"))
+  '((t :foreground "#a840f8"))
   "Face for mail headers to D_I_Wood@hotmail.com"
   :group 'basic-faces)
 (defface email-me
-  '((t :foreground "#00c080"))
+  '((t :foreground "#20e0a0"))
   "Face for mail headers to soulflyer@me.com"
+  :group 'basic-faces)
+(defface email-google
+  '((t :foreground "#e88800"))
+  "Face for mail headers to google mail"
   :group 'basic-faces)
 
 
@@ -83,7 +87,8 @@
       email-photos-face 'email-photos
       email-wiserobot-face 'email-wiserobot
       email-hotmail-face 'email-hotmail
-      email-me-face 'email-me)
+      email-me-face 'email-me
+      email-google-face 'email-google)
 
 (setq header-highlights
       '((".*public@soulflyer.*" . email-public-face)
@@ -92,11 +97,43 @@
         (".*photos@soulflyer.*" . email-photos-face)
         (".*iain@wiserobot.com.*" . email-wiserobot-face)
         (".*@hotmail.com.*" . email-hotmail-face)
-        (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)))
+        (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)
+        (".*@gmail.com.*" . email-google-face)))
 
 (add-hook 'mu4e-headers-mode-hook
           (lambda ()
             (setq font-lock-defaults '(header-highlights))))
+
+;; when you reply to a message, use the identity that the mail was sent to
+;; -- function that checks to, cc and bcc fields
+;; Found at https://vxlabs.com/2014/06/06/configuring-emacs-mu4e-with-nullmailer-offlineimap-and-multiple-identities/
+(defun cpb-mu4e-is-message-to (msg rx)
+  "Check if to, cc or bcc field in MSG has any address in RX."
+  (or (mu4e-message-contact-field-matches msg :to rx)
+      (mu4e-message-contact-field-matches msg :cc rx)
+      (mu4e-message-contact-field-matches msg :bcc rx)))
+
+;; we only do something if we recognize something (i.e. no stupid default)
+(add-hook 'mu4e-compose-pre-hook
+          (defun my-set-from-address ()
+            "Set current identity based on to, cc, bcc of original."
+            (let ((msg mu4e-compose-parent-message)) ;; msg is shorter...
+              (if msg
+                  (setq user-mail-address
+                        (cond
+                         ((cpb-mu4e-is-message-to msg (list "iain@soulflyer.co.uk"
+                                                            "iain@soulflyer.com"
+                                                            "D_I_Wood@hotmail.com"))
+                          "iain@soulflyer.co.uk")
+                         ((cpb-mu4e-is-message-to msg (list "public@soulflyer.co.uk"
+                                                            "@googlegroups.com"))
+                          "public@soulflyer.co.uk")
+                         ((cpb-mu4e-is-message-to msg "teacher@soulflyer.co.uk")
+                          "teacher@soulflyer.co.uk")
+                         ((cpb-mu4e-is-message-to msg (list "photos@soulflyer.co.uk"
+                                                            "photo-request@soulflyer.co.uk"))
+                          "photos@soulflyer.co.uk")
+                         (t "iain@soulflyer.co.uk")))))))
 
 (setq user-mail-address "iain@soulflyer.co.uk")
 (require 'smtpmail)
