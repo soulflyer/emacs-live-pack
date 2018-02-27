@@ -14,6 +14,13 @@
 (global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
 (global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-o") 'avy-goto-char-timer)
+(global-set-key (kbd "C-c C-h") 'helm-descbinds)
+
+;; Release this so it can be used by yasnippet
+(define-key org-mode-map (kbd "C-c C-s") nil)
+(define-key org-mode-map (kbd "C-c C-n") nil)
+(global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
+(global-set-key (kbd "C-c C-n") 'yas-new-snippet)
 
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
@@ -24,6 +31,7 @@
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
 (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
 (define-key cider-repl-mode-map (kbd "C-c C-c") 'backward-kill-sexp)
+(define-key cider-repl-mode-map (kbd "C-c h") 'cider-browse-ns-all)
 
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)

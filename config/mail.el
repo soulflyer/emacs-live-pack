@@ -72,7 +72,7 @@
   "Face for mail headers to D_I_Wood@hotmail.com"
   :group 'basic-faces)
 (defface email-me
-  '((t :foreground "#20e0a0"))
+  '((t :foreground "#20e0e0"))
   "Face for mail headers to soulflyer@me.com"
   :group 'basic-faces)
 (defface email-google
@@ -95,10 +95,10 @@
         (".*teacher@soulflyer.*" . email-teacher-face)
         (".*iain@soulflyer.*" . email-iain-face)
         (".*photos@soulflyer.*" . email-photos-face)
-        (".*iain@wiserobot.com.*" . email-wiserobot-face)
+        (".*\\(iain@wiserobot.com\\|code@soulflyer.co.uk\\).*" . email-wiserobot-face)
         (".*@hotmail.com.*" . email-hotmail-face)
         (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)
-        (".*@gmail.com.*" . email-google-face)))
+        (".*shysubversion@gmail.com.*" . email-google-face)))
 
 (add-hook 'mu4e-headers-mode-hook
           (lambda ()
