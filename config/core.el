@@ -4,7 +4,7 @@
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 (require 'iy-go-to-char)
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
-
+;;(global-visual-line-mode 1)
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
 

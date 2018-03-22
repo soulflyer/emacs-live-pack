@@ -14,7 +14,8 @@
   (message "created %s" new-file-name)
   (message "major mode %s" major-mode)
   (if (string= major-mode "dired-mode")
-      (revert-buffer)))
+      (revert-buffer))
+  (dired-jump nil (expand-file-name new-file-name)))
 
 (defun v-resize (key)
    "Interactively resize the window.  KEY."

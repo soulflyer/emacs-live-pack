@@ -10,7 +10,7 @@
 ;; the line above doesn't work. Set org-agenda-window-setup instead
 (setq org-agenda-window-setup 'current-window)
 
-(setq org-agenda-files '("~/Documents/Plans"))
+(setq org-agenda-files '("~/Documents/org-mode/plans" "~/Documents/org-mode/notes"))
 
 (setq org-enforce-todo-dependencies t)
 (setq org-agenda-dim-blocked-tasks t)
@@ -38,14 +38,15 @@
 
 (add-hook 'org-mode-hook (lambda ()
 
-(set-face-attribute 'org-level-1 nil :foreground "#00f000")
-(set-face-attribute 'org-level-2 nil :foreground "#00d090")
-(set-face-attribute 'org-level-3 nil :foreground "#40d0d0")
-(set-face-attribute 'org-level-4 nil :foreground "#50a0a0")
-(set-face-attribute 'org-level-5 nil :foreground "#508080")
-(set-face-attribute 'org-level-6 nil :foreground "#606060")
-(set-face-attribute 'org-level-7 nil :foreground "#505050")
-(set-face-attribute 'org-level-8 nil :foreground "#404040")))
+(set-face-attribute 'org-level-1 nil :foreground "#40ff40")
+(set-face-attribute 'org-level-2 nil :foreground "#80ff00")
+(set-face-attribute 'org-level-3 nil :foreground "#80ff80")
+;; org-level-4 was still showing too dim, so it is defined by customize.
+(set-face-attribute 'org-level-4 nil :foreground "#40fff0")
+(set-face-attribute 'org-level-5 nil :foreground "#20f0f0")
+(set-face-attribute 'org-level-6 nil :foreground "#40d0f0")
+(set-face-attribute 'org-level-7 nil :foreground "#40a0a0")
+(set-face-attribute 'org-level-8 nil :foreground "#409090")))
 
 
 (custom-set-faces '(org-agenda-dimmed-todo-face ((t (:foreground "#7f7f7f")))))
