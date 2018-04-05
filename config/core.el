@@ -5,8 +5,17 @@
 (require 'iy-go-to-char)
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
 (global-aggressive-indent-mode 1)
+(add-hook 'dired-mode-hook (lambda () (setq truncate-lines t)))
+;; this sets the character displayed when a line is truncated.
+;; use ?\  to remove it altogether.
+(set-display-table-slot standard-display-table 0 ?~)
+
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
+
+(ivy-mode 1)
+(setq ivy-count-format "%d/%d:")
+(setq ivy-use-virtual-buffers t)
 
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)

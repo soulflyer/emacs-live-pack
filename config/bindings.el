@@ -9,12 +9,27 @@
 (global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
-
+(global-set-key (kbd "C-a")     'back-to-indentation)
+(global-set-key (kbd "C-x C-a") 'move-beginning-of-line)
 (global-set-key (kbd "C-c -") 'v-resize)
 (global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
 (global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-o") 'avy-goto-char-timer)
 (global-set-key (kbd "C-c C-h") 'helm-descbinds)
+
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+
+(define-prefix-command 'paredit-map)
+(global-set-key (kbd "C-c p") 'paredit-map)
+(define-key paredit-map (kbd "b f") 'paredit-forward-barf-sexp)
+(define-key paredit-map (kbd "f b") 'paredit-forward-barf-sexp)
+(define-key paredit-map (kbd "b b") 'paredit-backward-barf-sexp)
+(define-key paredit-map (kbd "s f") 'paredit-forward-slurp-sexp)
+(define-key paredit-map (kbd "f s") 'paredit-forward-slurp-sexp)
+(define-key paredit-map (kbd "s b") 'paredit-backward-slurp-sexp)
+(define-key paredit-map (kbd "b s") 'paredit-backward-slurp-sexp)
 
 ;; Release this so it can be used by yasnippet
 (define-key org-mode-map (kbd "C-c C-s") nil)
@@ -70,6 +85,7 @@
 (define-key diw-minor-mode-map  (kbd "C-c v")   'clipboard-yank)
 (define-key diw-minor-mode-map  (kbd "C-c c")   'clipboard-kill-ring-save)
 (define-key diw-minor-mode-map  (kbd "C-c C-v") 'visual-line-mode)
+(define-key diw-minor-mode-map  (kbd "C-c C-t") 'toggle-truncate-lines)
 (define-key diw-minor-mode-map  (kbd "C-x C-n") 'switch-to-next-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-p") 'switch-to-prev-buffer)
 (define-key diw-minor-mode-map  (kbd "C-z")     'cua-scroll-down)
