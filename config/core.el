@@ -4,7 +4,12 @@
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 (require 'iy-go-to-char)
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
+
+;; Don't do this, it breaks things. Keybind it instead.
 (global-aggressive-indent-mode 1)
+;; Ok do it, but don't let it screw up the dider-repl
+(add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
+
 (add-hook 'dired-mode-hook (lambda () (setq truncate-lines t)))
 ;; this sets the character displayed when a line is truncated.
 ;; use ?\  to remove it altogether.
@@ -16,6 +21,10 @@
 (ivy-mode 1)
 (setq ivy-count-format "%d/%d:")
 (setq ivy-use-virtual-buffers t)
+
+(which-key-mode)
+;; shut up about my elisp code you pedant
+(setq-default flycheck-disabled-checkers `(emacs-lisp-checkdoc))
 
 ;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 ;;(setq-default  cursor-type 'bar)
