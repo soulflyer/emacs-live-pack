@@ -1,7 +1,7 @@
 ;;; package --- Summary:
 ;;; Commentary:
 (require 'mu4e)
-(require 'notmuch)
+;; (require 'notmuch)
 ;;; Code:
 
 (setq
@@ -18,7 +18,8 @@
  message-kill-buffer-on-exit t)
 
 (mu4e-maildirs-extension)
-(setq mu4e-maildirs-extension-fake-maildir-separator ".")
+;;(setq mu4e-maildirs-extension-hide-empty-maildirs nil)
+;;(setq mu4e-maildirs-extension-ignored-regex "INBOX.Archive")
 (add-to-list 'mu4e-header-info-custom
              '(:real-to .
                         (:name "Real :to Address"
