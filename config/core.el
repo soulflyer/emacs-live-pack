@@ -15,6 +15,40 @@
 ;; use ?\  to remove it altogether.
 (set-display-table-slot standard-display-table 0 ?~)
 
+;; This should probably be set per project in .dir-locals.el
+(setq cider-default-cljs-repl "Figwheel")
+
+;; deal with big files
+(package-install 'vlf)
+(require 'vlf-setup)
+(package-install 'inf-mongo)
+(require 'inf-mongo)
+(setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
+
+(package-install 'counsel-osx-app)
+(require 'counsel-osx-app)
+
+(package-install 'decide)
+(require 'decide)
+
+;;(package-install 'dired-single)
+;;(require 'dired-single)
+
+(package-install 'exiftool)
+(require 'exiftool)
+
+;; (load-file "/usr/local/gnugo-3.8/interface/gnugo.el")
+;; (load-file "/usr/local/gnugo-3.8/interface/gnugo-big-xpms.el")
+;; (load-file "/usr/local/gnugo-3.8/interface/make-xpms-file.el")
+;; (setq gnugo-xpms nil)
+
+;; (autoload 'gnugo "gnugo" "GNU GO" t)
+;; (autoload 'gnugo-xpms "gnugo-big-xpms" "GNU GO" t)
+
+(package-install 'google-translate)
+(require 'google-translate)
+
+
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
 
@@ -40,7 +74,7 @@
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
-(require 'inf-ruby)
+;;(require 'inf-ruby)
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
 (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 (eval-after-load 'ruby-mode

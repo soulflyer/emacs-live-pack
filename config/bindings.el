@@ -22,6 +22,13 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
+;; This is for gui emacs. It shouldn't even reach command line emacs
+(global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
+
+;; Should probably undo this in the emacs live paredit pack rather than rebind it back
+;; to the default here.
+(define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward)
+
 (define-prefix-command 'paredit-map)
 (global-set-key (kbd "C-c p") 'paredit-map)
 (define-key paredit-map (kbd "b f") 'paredit-forward-barf-sexp)
@@ -40,9 +47,18 @@
 
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+
 (define-key dired-mode-map (kbd "f") 'dired-make-file)
 (define-key dired-mode-map  (kbd "C-c C-e") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "/") 'dired-up-directory)
+(define-key dired-mode-map [mouse-2] 'dired-find-file)
+;; the following works mostly, but closes emacsclient if you step
+;; back beyond the buffer where dired was first opened
+;; (define-key dired-mode-map (kbd "RET") 'dired-single-buffer)
+;; (define-key dired-mode-map [mouse-2] 'dired-single-buffer-mouse)
+;; (define-key dired-mode-map (kbd "/")
+;;   (function
+;;    (lambda nil (interactive) (dired-single-buffer ".."))))
 
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
 (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
@@ -72,6 +88,7 @@
 (define-key diw-minor-mode-map  (kbd "M-DEL")   'kill-whole-line)
 (define-key diw-minor-mode-map  (kbd "C-o")     'avy-goto-char-timer)
 (define-key diw-minor-mode-map  (kbd "C-x k")   'kill-this-buffer)
+;; these are super key bindings. Not currently useful on mac
 (define-key diw-minor-mode-map  (kbd "s-w")     'delete-frame)
 (define-key diw-minor-mode-map  (kbd "s-o")     'ido-find-file)
 (define-key diw-minor-mode-map  (kbd "C-x SPC") 'cua-set-mark)
