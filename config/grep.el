@@ -91,4 +91,24 @@ and overlay is highlighted between MK and END-MK."
        (when (and (eq next-error-highlight 'fringe-arrow))
          ;; We want a fringe arrow (instead of highlighting).
          (setq next-error-overlay-arrow-position
-                   (copy-marker (line-beginning-position)))))))
+               (copy-marker (line-beginning-position)))))))
+
+;; The following is slightly modified version of an answer here:
+;; https://stackoverflow.com/questions/34956467/defining-custom-emacs-find-grep-shortcut
+(defvar grep-context-lines 1
+  "Default number of context lines (non-matching lines after the matching line) for `rgrep-context'.")
+
+(set-face-attribute 'shadow nil :foreground "yellow")
+
+(defun rgrep-context (arg)
+  "Like `rgrep', but adds a '-A' parameter to get context lines around matches.
+
+Default number of context lines is `grep-context-lines', and can
+be specified with a numeric prefix."
+  (interactive "p")
+  (setq arg (or arg grep-context-lines))
+  (let ((grep-find-template
+         (format "find <D> <X> -type f <F> -exec grep <C> -nH -A %d -e <R> {} +" arg))
+        grep-host-defaults-alist
+        current-prefix-arg)
+    (call-interactively 'rgrep)))

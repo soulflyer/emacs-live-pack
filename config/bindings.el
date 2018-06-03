@@ -21,6 +21,7 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "C-M-\\") 'aggressive-indent-mode)
 
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
@@ -60,9 +61,9 @@
 ;;   (function
 ;;    (lambda nil (interactive) (dired-single-buffer ".."))))
 
-(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
-(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
-(define-key cider-repl-mode-map (kbd "C-c C-c") 'backward-kill-sexp)
+;;(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-backward-input)
+;;(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
+(define-key cider-repl-mode-map (kbd "C-c C-c") 'cider-repl-kill-input)
 (define-key cider-repl-mode-map (kbd "C-c h") 'cider-browse-ns-all)
 
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)

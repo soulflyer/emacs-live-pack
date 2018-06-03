@@ -10,7 +10,9 @@
 ;; the line above doesn't work. Set org-agenda-window-setup instead
 (setq org-agenda-window-setup 'current-window)
 
-(setq org-agenda-files '("~/Documents/org-mode/plans" "~/Documents/org-mode/notes"))
+(setq org-agenda-files '("~/Documents/org-mode/plans"
+                         "~/Documents/org-mode/notes"
+                         "~/Code/Clojure/Descjop/hinh-anh/docs"))
 
 (setq org-enforce-todo-dependencies t)
 (setq org-agenda-dim-blocked-tasks t)

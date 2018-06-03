@@ -3,12 +3,14 @@
 ;;; Code:
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 (require 'iy-go-to-char)
-(add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
 
+;;(require 're-jump)
 ;; Don't do this, it breaks things. Keybind it instead.
 (global-aggressive-indent-mode 1)
 ;; Ok do it, but don't let it screw up the dider-repl
 (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
+;; and maybe it fucks with cider-dynamic-indentation?
+;;(setq cider-dynamic-indentation nil)
 
 (add-hook 'dired-mode-hook (lambda () (setq truncate-lines t)))
 ;; this sets the character displayed when a line is truncated.
@@ -16,38 +18,7 @@
 (set-display-table-slot standard-display-table 0 ?~)
 
 ;; This should probably be set per project in .dir-locals.el
-(setq cider-default-cljs-repl "Figwheel")
-
-;; deal with big files
-(package-install 'vlf)
-(require 'vlf-setup)
-(package-install 'inf-mongo)
-(require 'inf-mongo)
-(setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
-
-(package-install 'counsel-osx-app)
-(require 'counsel-osx-app)
-
-(package-install 'decide)
-(require 'decide)
-
-;;(package-install 'dired-single)
-;;(require 'dired-single)
-
-(package-install 'exiftool)
-(require 'exiftool)
-
-;; (load-file "/usr/local/gnugo-3.8/interface/gnugo.el")
-;; (load-file "/usr/local/gnugo-3.8/interface/gnugo-big-xpms.el")
-;; (load-file "/usr/local/gnugo-3.8/interface/make-xpms-file.el")
-;; (setq gnugo-xpms nil)
-
-;; (autoload 'gnugo "gnugo" "GNU GO" t)
-;; (autoload 'gnugo-xpms "gnugo-big-xpms" "GNU GO" t)
-
-(package-install 'google-translate)
-(require 'google-translate)
-
+;;(setq cider-default-cljs-repl 'figwheel)
 
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
@@ -69,7 +40,6 @@
 (openwith-mode t)
 (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\)\\'" "open" (file))
                               ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))))
-
 
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
@@ -95,13 +65,12 @@
                             (lambda (_ _) nil))
                (enable-paredit-mode))))
 
-(require 'scss-mode)
-(require 'sws-mode)
-(require 'jade-mode)
-(require 'feature-mode)
+;; Probably don't need these now they are installed by package manager
+;; (require 'scss-mode)
+;; (require 'sws-mode)
+;; (require 'jade-mode)
+;; (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
-;; Open .rake files in ruby mode
 (add-to-list 'auto-mode-alist '("\.rake$" . ruby-mode))
 
 ;;stop emacs from shitting all over my file system

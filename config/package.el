@@ -23,6 +23,30 @@
 (package-install 'sws-mode)
 (package-install 'jade-mode)
 (package-install 'feature-mode)
-;;(package-install 'clj-refactor)
+(package-install 'google-translate)
+(package-install 'inf-mongo)
+(setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
+(package-install 'paradox)
+(setq paradox-github-token "464596cc31f802408d766a6b47a6052b61a5919c")
+
+;; deal with big files
+(package-install 'vlf)
+(require 'vlf-setup)
+
+(package-install 'counsel-osx-app)
+(require 'counsel-osx-app)
+
+(package-install 'decide)
+;; without the require, the decide-roll functions don't appear until after
+;; decide-maode is called?
+(require 'decide)
+
+;;This could be useful, but it has no interactive fns so only good for elisp programming.
+;;(package-install 'exiftool)
+;;(require 'exiftool)
+
+
+
+
 
 ;;; package.el ends here
