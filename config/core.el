@@ -118,7 +118,7 @@
            (figwheel-sidecar.repl-api/cljs-repl))")
 ;; Colourize all fns known to be defined, not just clojure core
 ;; might want to add deprecated to the list?
-;;(setq cider-font-lock-dynamically '(macro core function var))
+(setq cider-font-lock-dynamically '(macro core function var deprecated))
 
 ;; Cleanup ibuffer display so I can tell which file is which
 (setq ibuffer-formats '((mark modified read-only git-status-mini " "

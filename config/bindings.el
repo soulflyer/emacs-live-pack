@@ -6,6 +6,12 @@
 ;;(define-key global-map (kbd "C-+") 'text-scale-increase)
 ;;(define-key global-map (kbd "C--") 'text-scale-decrease)
 
+(define-key direx:direx-mode-map (kbd "s") 'direx-grep:grep-item)
+(define-key direx:direx-mode-map (kbd "S") 'direx-grep:grep-item-from-root)
+(define-key direx:direx-mode-map (kbd "a") 'direx-grep:show-all-item-at-point)
+(define-key direx:direx-mode-map (kbd "A") 'direx-grep:show-all-item)
+
+
 (global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
@@ -15,13 +21,17 @@
 (global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
 (global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-o") 'avy-goto-char-timer)
-(global-set-key (kbd "C-c C-h") 'helm-descbinds)
+(global-set-key (kbd "C-c C-M-h") 'helm-descbinds)
 
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-\\") 'aggressive-indent-mode)
+(global-set-key [f6] 'rgrep)
+(global-set-key (kbd "C-c j d") 'dumb-jump-go)
+(global-set-key (kbd "C-c j u") 'dumb-jump-back)
+(global-set-key (kbd "C-c j g") 'dumb-jump-go-prompt)
 
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
@@ -99,10 +109,6 @@
 (define-key diw-minor-mode-map  (kbd "C-x b")   'ido-switch-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-r") 'recentf-open-files)
 (define-key diw-minor-mode-map  (kbd "C-x w")   'delete-window)
-;;(define-key diw-minor-mode-map  (kbd "C-c c") 'clipboard-kill-ring-save)
-;;(define-key diw-minor-mode-map  (kbd "C-c c") 'org-capture)
-(define-key diw-minor-mode-map  (kbd "C-c v")   'clipboard-yank)
-(define-key diw-minor-mode-map  (kbd "C-c c")   'clipboard-kill-ring-save)
 (define-key diw-minor-mode-map  (kbd "C-c C-v") 'visual-line-mode)
 (define-key diw-minor-mode-map  (kbd "C-c C-t") 'toggle-truncate-lines)
 (define-key diw-minor-mode-map  (kbd "C-x C-n") 'switch-to-next-buffer)

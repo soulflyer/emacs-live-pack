@@ -27,7 +27,6 @@
 (package-install 'inf-mongo)
 (setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
 (package-install 'paradox)
-(setq paradox-github-token "464596cc31f802408d766a6b47a6052b61a5919c")
 
 ;; deal with big files
 (package-install 'vlf)
@@ -41,6 +40,9 @@
 ;; decide-maode is called?
 (require 'decide)
 
+(package-install 'grep-a-lot)
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
 ;;This could be useful, but it has no interactive fns so only good for elisp programming.
 ;;(package-install 'exiftool)
 ;;(require 'exiftool)

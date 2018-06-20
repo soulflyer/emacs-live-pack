@@ -1,10 +1,9 @@
 ;;; package --- Summary:
 ;;; Commentary:
-(require 'mu4e)
-;; (require 'notmuch)
+
 ;;; Code:
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/mu4e")
-
+(require 'mu4e)
 (setq
  mail-user-agent 'mu4e-user-agent
  mu4e-maildir "~/Mail"
