@@ -11,9 +11,13 @@
 (define-key direx:direx-mode-map (kbd "a") 'direx-grep:show-all-item-at-point)
 (define-key direx:direx-mode-map (kbd "A") 'direx-grep:show-all-item)
 
-
 (global-set-key (kbd "C-c C-p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m o") 'mc/mark-pop)
+(global-set-key (kbd "C-c m m") 'mc/mark-more-like-this-extended)
+(global-set-key (kbd "C-c m d") 'mc/mark-all-dwim)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-a")     'back-to-indentation)
 (global-set-key (kbd "C-x C-a") 'move-beginning-of-line)
@@ -54,7 +58,7 @@
 (define-key org-mode-map (kbd "C-c C-s") nil)
 (define-key org-mode-map (kbd "C-c C-n") nil)
 (global-set-key (kbd "C-c C-s") 'yas-insert-snippet)
-(global-set-key (kbd "C-c C-n") 'yas-new-snippet)
+;;(global-set-key (kbd "C-c C-n") 'yas-new-snippet)
 
 ;; This line may make all the other RET redefines unnecessary....
 (define-key prog-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
