@@ -5,7 +5,6 @@
 ;; For example:
 ;;(define-key global-map (kbd "C-+") 'text-scale-increase)
 ;;(define-key global-map (kbd "C--") 'text-scale-decrease)
-
 (define-key direx:direx-mode-map (kbd "s") 'direx-grep:grep-item)
 (define-key direx:direx-mode-map (kbd "S") 'direx-grep:grep-item-from-root)
 (define-key direx:direx-mode-map (kbd "a") 'direx-grep:show-all-item-at-point)
@@ -77,6 +76,7 @@
 
 ;;(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-backward-input)
 ;;(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
+
 (define-key cider-repl-mode-map (kbd "C-c C-c") 'cider-repl-kill-input)
 (define-key cider-repl-mode-map (kbd "C-c h") 'cider-browse-ns-all)
 

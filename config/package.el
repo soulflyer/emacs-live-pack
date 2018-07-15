@@ -43,6 +43,9 @@
 (package-install 'grep-a-lot)
 (require 'grep-a-lot)
 (grep-a-lot-setup-keys)
+
+(package-install 'direx-grep)
+(require 'direx-grep)
 ;;This could be useful, but it has no interactive fns so only good for elisp programming.
 ;;(package-install 'exiftool)
 ;;(require 'exiftool)

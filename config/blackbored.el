@@ -116,9 +116,7 @@
      (naeu-blue-face ((t (:foreground "medium slate blue" :background "black"))))
      (naeu-orange-face ((t (:foreground "#FBDE2D" :background "black"))))
      (naeu-red-face ((t (:foreground "orange" :background "black"))))
-     (naeu-grey-face ((t (:foreground "gray30" :background "black"))))
-
-     )))
+     (naeu-grey-face ((t (:foreground "gray30" :background "black")))))))
 
 (custom-set-faces
 
@@ -131,11 +129,6 @@
  '(ediff-odd-diff-A ((((class color) (background dark)) (:background "dark green"))))
  '(ediff-odd-diff-B ((((class color) (background dark)) (:background "dark red"))))
  '(ediff-even-diff-B ((((class color) (background dark)) (:background "dark red"))))
-                                        ; '(ediff-current-diff-B ((((class color)) (:background "white"))))
-                                        ; '(ediff-even-diff-A ((((class color)) nil)))
-                                        ; '(ediff-even-diff-B ((((class color)) nil)))
-                                        ; '(ediff-fine-diff-A ((((class color)) (:background "cyan"))))
-                                        ; '(ediff-fine-diff-B ((((class color)) (:background "cyan"))))
-                                        ; '(ediff-odd-diff-A ((((class color)) nil)))
-                                        ; '(ediff-odd-diff-B ((((class color)) nil)))
+
+ '(next-error ((t (:foreground "deep pink" :underline t))))
  )
