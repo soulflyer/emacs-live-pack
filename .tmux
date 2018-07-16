@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 # This file was copied from ~/.tmux.default
 #

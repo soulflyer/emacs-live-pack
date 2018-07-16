@@ -40,6 +40,7 @@
      (border-glyph ((t (nil))))
      (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
 
+     (minibuffer-prompt ((t (:foreground "#61CE3C" :background "black"))))
 
      (show-paren-match ((((class color) (background dark)) (:background "#1c1c1c"))))
      ;;(show-paren-match ((t (:background "color-236"))))
@@ -85,6 +86,8 @@
      (diff-added ((t (:foreground "green"))))
      (diff-removed ((t (:foreground "red"))))
 
+     (next-error ((t (:background "black" :foreground "deep pink" :underline t))))
+
      (magit-diff-add ((t (:background "black" :foreground "green"))))
      (magit-diff-del ((t (:background "black" :foreground "red"))))
      (magit-diff-removed ((t (:background "black" :foreground "#a00000"))))
@@ -111,6 +114,11 @@
 
      (yas/field-highlight-face ((t (:background "deep pink" :foreground "black"))))
 
+     (git-gutter:modified ((t (:foreground "#4c83ff" :background "gray5"))) )
+     (git-gutter:deleted ((t (:foreground "gray10" :background "gray5"))) )
+     (git-gutter:added ((t (:foreground "#61CE3C" :background "gray5" ))) )
+     (git-gutter:unchanged ((t (:background "grey5" ))) )
+
      (naeu-green-face ((t (:foreground "green" :background "black"))))
      (naeu-pink-face ((t (:foreground "deep pink" :background "black"))))
      (naeu-blue-face ((t (:foreground "medium slate blue" :background "black"))))
@@ -128,7 +136,4 @@
  '(ediff-even-diff-A ((((class color) (background dark)) (:background "dark green"))))
  '(ediff-odd-diff-A ((((class color) (background dark)) (:background "dark green"))))
  '(ediff-odd-diff-B ((((class color) (background dark)) (:background "dark red"))))
- '(ediff-even-diff-B ((((class color) (background dark)) (:background "dark red"))))
-
- '(next-error ((t (:foreground "deep pink" :underline t))))
- )
+ '(ediff-even-diff-B ((((class color) (background dark)) (:background "dark red")))))
