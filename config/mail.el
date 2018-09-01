@@ -39,7 +39,7 @@
         (:real-to    . nil)))
 
 (setq mu4e-maildir-shortcuts
-      `(("/INBOX.Archives.2017" . ?a)
+      `(("/INBOX.Archives.2018" . ?a)
         ("/INBOX"               . ?i)
         ("/INBOX.spam"          . ?s)))
 

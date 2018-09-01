@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
+(setq live-disable-zone t)
 (require 'iy-go-to-char)
 
 ;;(require 're-jump)
@@ -12,9 +13,9 @@
 ;; and maybe it fucks with cider-dynamic-indentation?
 ;;(setq cider-dynamic-indentation nil)
 
-(add-hook 'dired-mode-hook (lambda () (setq truncate-lines t)))
-(add-hook 'grep-mode-hook  (lambda () (setq truncate-lines t)))
-(add-hook 'cider-repl-mode (lambda () (setq truncate-lines t)))
+(add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
+(add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
+(add-hook 'cider-repl-mode-hook (lambda () (setq truncate-lines t)))
 
 ;; this sets the character displayed when a line is truncated.
 ;; use ?\  to remove it altogether.

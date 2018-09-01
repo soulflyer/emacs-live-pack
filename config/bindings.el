@@ -32,6 +32,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-M-\\") 'aggressive-indent-mode)
 (global-set-key [f6] 'rgrep)
+(global-set-key [f5] 'rgrep-context)
 (global-set-key (kbd "C-c j d") 'dumb-jump-go)
 (global-set-key (kbd "C-c j u") 'dumb-jump-back)
 (global-set-key (kbd "C-c j g") 'dumb-jump-go-prompt)
