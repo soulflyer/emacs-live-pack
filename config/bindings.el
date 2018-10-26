@@ -36,7 +36,7 @@
 (global-set-key (kbd "C-c j d") 'dumb-jump-go)
 (global-set-key (kbd "C-c j u") 'dumb-jump-back)
 (global-set-key (kbd "C-c j g") 'dumb-jump-go-prompt)
-
+(global-set-key (kbd "C-M-q")   'quoted-insert)
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
 
@@ -114,7 +114,7 @@
 (define-key diw-minor-mode-map  (kbd "C-x b")   'ido-switch-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-r") 'recentf-open-files)
 (define-key diw-minor-mode-map  (kbd "C-x w")   'delete-window)
-(define-key diw-minor-mode-map  (kbd "C-c C-v") 'visual-line-mode)
+(define-key diw-minor-mode-map  (kbd "C-c v")   'visual-line-mode)
 (define-key diw-minor-mode-map  (kbd "C-c C-t") 'toggle-truncate-lines)
 (define-key diw-minor-mode-map  (kbd "C-x C-n") 'switch-to-next-buffer)
 (define-key diw-minor-mode-map  (kbd "C-x C-p") 'switch-to-prev-buffer)

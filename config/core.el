@@ -8,7 +8,7 @@
 ;;(require 're-jump)
 ;; Don't do this, it breaks things. Keybind it instead.
 (global-aggressive-indent-mode 1)
-;; Ok do it, but don't let it screw up the dider-repl
+;; Ok do it, but don't let it screw up the cider-repl
 (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
 ;; and maybe it fucks with cider-dynamic-indentation?
 ;;(setq cider-dynamic-indentation nil)
