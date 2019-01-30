@@ -79,7 +79,7 @@
      (mode-line ((t (:background "gray10" :foreground "#4c83ff"))))
      (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
 
-     (highlight ((t (:background "DarkOrange"))))
+     (highlight ((t (:background "#444444"))))
      (isearch ((t (:background "yellow" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
      (lazy-highlight ((t (:background "#181818"))))

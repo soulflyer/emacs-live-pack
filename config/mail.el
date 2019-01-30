@@ -66,8 +66,12 @@
   "Face for mail headers to photos@soulflyer.co.uk"
   :group 'basic-faces)
 (defface email-wiserobot
-  '((t :foreground "#0000e8"))
+  '((t :foreground "#8070a8"))
   "Face for mail headers to iain@wiserobot.com"
+  :group 'basic-faces)
+(defface email-code
+  '((t :foreground "#0000e8"))
+  "Face for mail headers to code@soulflyer.co.uk"
   :group 'basic-faces)
 (defface email-hotmail
   '((t :foreground "#a840f8"))
@@ -88,6 +92,7 @@
       email-iain-face 'email-iain
       email-photos-face 'email-photos
       email-wiserobot-face 'email-wiserobot
+      email-code-face 'email-code
       email-hotmail-face 'email-hotmail
       email-me-face 'email-me
       email-google-face 'email-google)
@@ -97,7 +102,8 @@
         (".*teacher@soulflyer.*" . email-teacher-face)
         (".*iain@soulflyer.*" . email-iain-face)
         (".*photos@soulflyer.*" . email-photos-face)
-        (".*\\(iain@wiserobot.com\\|code@soulflyer.co.uk\\).*" . email-wiserobot-face)
+        (".*@wiserobot.com.*" . email-wiserobot-face)
+        (".*\\(code@soulflyer.co.uk\\|github.com\\).*" . email-code-face)
         (".*@hotmail.com.*" . email-hotmail-face)
         (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)
         (".*shysubversion@gmail.com.*" . email-google-face)))

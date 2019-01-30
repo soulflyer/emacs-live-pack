@@ -17,6 +17,8 @@
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
 (add-hook 'cider-repl-mode-hook (lambda () (setq truncate-lines t)))
 
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+(add-hook 'prog-mode-hook 'turn-on-visual-line-mode)
 ;; this sets the character displayed when a line is truncated.
 ;; use ?\  to remove it altogether.
 (set-display-table-slot standard-display-table 0 ?~)
@@ -30,6 +32,7 @@
 (ivy-mode 1)
 (setq ivy-count-format "%d/%d:")
 (setq ivy-use-virtual-buffers t)
+(setq ivy-use-selectable-prompt t)
 
 (which-key-mode)
 ;; shut up about my elisp code you pedant
@@ -110,6 +113,7 @@
 (require 'ls-lisp)
 (setq ls-lisp-use-insert-directory-program nil)
 (setq ls-lisp-verbosity '(uid))
+(setq dired-dwim-target t)
 
 (setq default-tab-width 2)
 (setq cider-repl-history-file "~/.cider-history")
