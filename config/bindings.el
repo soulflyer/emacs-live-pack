@@ -21,8 +21,8 @@
 (global-set-key (kbd "C-a")     'back-to-indentation)
 (global-set-key (kbd "C-x C-a") 'move-beginning-of-line)
 (global-set-key (kbd "C-c -") 'v-resize)
-(global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
-(global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
+;; (global-set-key (kbd "M-<left>") 'paredit-backward-slurp-sexp)
+;; (global-set-key (kbd "M-<right>") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-o") 'avy-goto-char-timer)
 (global-set-key (kbd "C-c C-M-h") 'helm-descbinds)
 
@@ -127,8 +127,10 @@
 (define-key diw-minor-mode-map  (kbd "M-2")     'er/contract-region)
 (define-key diw-minor-mode-map  (kbd "C-c o")   'org-agenda)
 (define-key diw-minor-mode-map  (kbd "C-h")     'help)
+;; TODO move these into the clojure-mode-map
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
 (define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
+(define-key diw-minor-mode-map  (kbd "C-c c")   'cider-connect)
 (define-key diw-minor-mode-map  (kbd "C-c q")   'cider-quit)
 
 (define-minor-mode diw-minor-mode

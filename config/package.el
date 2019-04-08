@@ -26,7 +26,9 @@
 (package-install 'google-translate)
 (package-install 'inf-mongo)
 (setq inf-mongo-command "/opt/local/bin/mongo 127.0.0.1:27017/soulflyer")
+
 (package-install 'paradox)
+(package-install 'markdown-mode)
 
 ;; deal with big files
 (package-install 'vlf)

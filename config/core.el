@@ -16,6 +16,7 @@
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
 (add-hook 'cider-repl-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'cider-repl-mode-hook '(lambda () (setq scroll-conservatively 101)))
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'prog-mode-hook 'turn-on-visual-line-mode)
