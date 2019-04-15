@@ -16,7 +16,7 @@
 
 (package-install 'flycheck)
 (package-install 'php-mode)
-(package-install 'php+-mode)
+;;(package-install 'php+-mode)
 (package-install 'apples-mode)
 (package-install 'applescript-mode)
 (package-install 'beacon)
