@@ -103,7 +103,7 @@
         (".*iain@soulflyer.*" . email-iain-face)
         (".*photos@soulflyer.*" . email-photos-face)
         (".*@wiserobot.com.*" . email-wiserobot-face)
-        (".*\\(code@soulflyer.co.uk\\|github.com\\).*" . email-code-face)
+        (".*\\(code@soulflyer.co.uk\\|github.com\\|flexiana.com\\).*" . email-code-face)
         (".*@hotmail.com.*" . email-hotmail-face)
         (".*\\(soulflyer@me.com\\|soulflyer@icloud.com\\).*" . email-me-face)
         (".*shysubversion@gmail.com.*" . email-google-face)))
