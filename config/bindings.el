@@ -121,6 +121,8 @@
 (define-key diw-minor-mode-map  (kbd "C-z")     'cua-scroll-down)
 (define-key diw-minor-mode-map  (kbd "M-~")     'switch-to-next-buffer)
 (define-key diw-minor-mode-map  (kbd "M-`")     'switch-to-prev-buffer)
+(define-key diw-minor-mode-map  (kbd "C-c C-b") 'switch-to-next-buffer)
+(define-key diw-minor-mode-map  (kbd "C-c b")   'switch-to-prev-buffer)
 (define-key diw-minor-mode-map  (kbd "M-m")     'iy-go-to-char)
 (define-key diw-minor-mode-map  (kbd "M-M")     'iy-go-to-char-backward)
 (define-key diw-minor-mode-map  (kbd "C-@")     'er/expand-region)
