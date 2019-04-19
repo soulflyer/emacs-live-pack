@@ -34,8 +34,9 @@
 (package-install 'vlf)
 (require 'vlf-setup)
 
-(package-install 'counsel-osx-app)
-(require 'counsel-osx-app)
+(package-install 'counsel)
+;;(package-install 'counsel-osx-app)
+;;(require 'counsel-osx-app)
 
 (package-install 'decide)
 ;; without the require, the decide-roll functions don't appear until after
