@@ -160,4 +160,5 @@
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
 
+(xclip-mode 1)
 ;;; core.el ends here
