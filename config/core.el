@@ -120,7 +120,7 @@
 (setq cider-repl-history-file "~/.cider-history")
 (setq cider-prompt-for-symbol nil)
 (setq cider-show-error-buffer nil)
-(setq clojure-indent-style :align-arguments)
+(setq clojure-indent-style :always-indent)
 (setq cider-cljs-lein-repl
       "(do (require 'figwheel-sidecar.repl-api)
            (figwheel-sidecar.repl-api/start-figwheel!)
@@ -128,18 +128,6 @@
 ;; Colourize all fns known to be defined, not just clojure core
 ;; might want to add deprecated to the list?
 (setq cider-font-lock-dynamically '(macro core function var deprecated))
-
-;; Cleanup ibuffer display so I can tell which file is which
-(setq ibuffer-formats '((mark modified read-only git-status-mini " "
-                              (size 5 -1 :left :elide)
-                              (name))
-                        (mark filename)))
-
-;; Highlight the cursor on focus. Can make it hard to read the current line.
-;;(beacon-mode 1)
-
-(autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
-(setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
 
 (define-clojure-indent
   (defroutes 'defun)
@@ -153,6 +141,23 @@
   (PATCH 2)
   (rfn 2)
   (let-routes 1)
-  (context 2))
+  (context 2)
+  (-> 1)
+  (->> 1)
+  (as-> 1)
+  (some-> 1)
+  (some->> 1))
+
+;; Cleanup ibuffer display so I can tell which file is which
+(setq ibuffer-formats '((mark modified read-only git-status-mini " "
+                              (size 7 -1 :left :elide)
+                              (name))
+                        (mark filename)))
+
+;; Highlight the cursor on focus. Can make it hard to read the current line.
+;;(beacon-mode 1)
+
+(autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
+(setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
 
 ;;; core.el ends here

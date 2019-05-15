@@ -14,6 +14,7 @@
                          "~/Documents/org-mode/notes"
                          "~/Code/Clojure/Descjop/hinh-anh/docs"))
 
+(setq org-return-follows-link t)
 (setq org-enforce-todo-dependencies t)
 (setq org-agenda-dim-blocked-tasks t)
 

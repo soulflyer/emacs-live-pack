@@ -40,9 +40,12 @@
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
 
+(define-key undo-tree-visualizer-mode-map (kbd "-") 'windresize)
 ;; Should probably undo this in the emacs live paredit pack rather than rebind it back
 ;; to the default here.
-(define-key paredit-mode-map (kbd "C-M-f") 'paredit-forward)
+(define-key paredit-mode-map (kbd "C-M-f")    'paredit-forward)
+(define-key paredit-mode-map (kbd "C-<up>")   'paredit-splice-sexp)
+(define-key paredit-mode-map (kbd "C-<down>") 'paredit-split-sexp)
 
 (define-prefix-command 'paredit-map)
 (global-set-key (kbd "C-c p") 'paredit-map)
@@ -75,8 +78,8 @@
 ;;   (function
 ;;    (lambda nil (interactive) (dired-single-buffer ".."))))
 
-;;(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-backward-input)
-;;(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
+(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-backward-input)
+(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
 
 (define-key cider-repl-mode-map (kbd "C-c C-c") 'cider-repl-kill-input)
 (define-key cider-repl-mode-map (kbd "C-c h") 'cider-browse-ns-all)
@@ -127,6 +130,11 @@
 (define-key diw-minor-mode-map  (kbd "M-2")     'er/contract-region)
 (define-key diw-minor-mode-map  (kbd "C-c o")   'org-agenda)
 (define-key diw-minor-mode-map  (kbd "C-h")     'help)
+(define-key diw-minor-mode-map  (kbd "C-c l s") 'org-store-link)
+(define-key diw-minor-mode-map  (kbd "C-c l i") 'org-insert-link)
+(define-key diw-minor-mode-map  (kbd "C-c l o") (lambda () (interactive) (org-open-at-point t)))
+(define-key diw-minor-mode-map  (kbd "C-M-_")   'undo-tree-visualize)
+(define-key diw-minor-mode-map  (kbd "C-_")     'undo-tree-undo)
 ;; TODO move these into the clojure-mode-map
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
 (define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
