@@ -154,11 +154,19 @@
                               (name))
                         (mark filename)))
 
+;; bookmark list columns
+(setq bookmark-bmenu-file-column 50)
+
 ;; Highlight the cursor on focus. Can make it hard to read the current line.
 ;;(beacon-mode 1)
 
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
 
-(xclip-mode 1)
+;; Linux needs this, MacOSX fails if it's left in. TODO make linux/macos auto select section
+;;(xclip-mode 1)
+
+;; This is how to do it, from emacs-live:
+;; (when (eq system-type 'darwin)
+;;   (live-load-config-file "osx.el"))
 ;;; core.el ends here

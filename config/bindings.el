@@ -40,12 +40,15 @@
 ;; This is for gui emacs. It shouldn't even reach command line emacs
 (global-set-key (kbd "C-<tab>") 'win-switch-dispatch)
 
+(define-key grep-mode-map (kbd "r") 'rename-buffer)
 (define-key undo-tree-visualizer-mode-map (kbd "-") 'windresize)
 ;; Should probably undo this in the emacs live paredit pack rather than rebind it back
 ;; to the default here.
-(define-key paredit-mode-map (kbd "C-M-f")    'paredit-forward)
-(define-key paredit-mode-map (kbd "C-<up>")   'paredit-splice-sexp)
-(define-key paredit-mode-map (kbd "C-<down>") 'paredit-split-sexp)
+(define-key paredit-mode-map (kbd "C-M-f")     'paredit-forward)
+(define-key paredit-mode-map (kbd "C-<up>")    'paredit-backward-up)
+(define-key paredit-mode-map (kbd "C-<down>")  'paredit-forward-down)
+(define-key paredit-mode-map (kbd "C-<left>")  'paredit-backward)
+(define-key paredit-mode-map (kbd "C-<right>") 'paredit-forward)
 
 (define-prefix-command 'paredit-map)
 (global-set-key (kbd "C-c p") 'paredit-map)

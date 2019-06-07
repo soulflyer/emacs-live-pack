@@ -13,6 +13,15 @@
 (setq org-agenda-files '("~/Documents/org-mode/plans"
                          "~/Documents/org-mode/notes"
                          "~/Code/Clojure/Descjop/hinh-anh/docs"))
+(setq org-src-window-setup "current-window")
+
+;; Attempt to stop emacs from asking to save non specified crap when doing a grep. It's related to
+;; SRC includes in org files but not sure exactly how.
+;; I think grep is calling save-some-buffers, so doing that regularly might turn up something useful
+;; (Use C-c s instead of C-c C-s)
+
+;; (setq org-edit-src-auto-save-idle-delay 0)
+;; (setq org-edit-src-turn-on-auto-save t)
 
 (setq org-return-follows-link t)
 (setq org-enforce-todo-dependencies t)
