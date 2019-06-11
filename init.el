@@ -14,7 +14,7 @@
 (live-load-config-file "mail.el")
 (live-load-config-file "grep.el")
 (live-load-config-file "rocks.el")
-(live-load-config-file "refactor.el")
+(live-load-config-file "clojure.el")
 (color-theme-blackbored)
 
 ;;; init.el ends here

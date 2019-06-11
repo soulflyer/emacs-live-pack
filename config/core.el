@@ -5,13 +5,8 @@
 (setq live-disable-zone t)
 (require 'iy-go-to-char)
 
-;;(require 're-jump)
-;; Don't do this, it breaks things. Keybind it instead.
 (global-aggressive-indent-mode 1)
-;; Ok do it, but don't let it screw up the cider-repl
 (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
-;; and maybe it fucks with cider-dynamic-indentation?
-;;(setq cider-dynamic-indentation nil)
 
 (add-hook 'dired-mode-hook      (lambda () (setq truncate-lines t)))
 (add-hook 'grep-mode-hook       (lambda () (setq truncate-lines t)))
@@ -20,12 +15,9 @@
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'prog-mode-hook 'turn-on-visual-line-mode)
-;; this sets the character displayed when a line is truncated.
-;; use ?\  to remove it altogether.
-(set-display-table-slot standard-display-table 0 ?~)
 
-;; This should probably be set per project in .dir-locals.el
-;;(setq cider-default-cljs-repl 'figwheel)
+;; this sets the character displayed when a line is truncated. use ?\  to remove it altogether.
+(set-display-table-slot standard-display-table 0 ?~)
 
 (setq tramp-default-method "sshx")
 (electric-pair-mode 1)
@@ -39,8 +31,6 @@
 ;; shut up about my elisp code you pedant
 (setq-default flycheck-disabled-checkers `(emacs-lisp-checkdoc))
 
-;;(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
-;;(setq-default  cursor-type 'bar)
 (setq show-paren-style (quote expression))
 (delete-selection-mode 1)
 
@@ -73,11 +63,6 @@
                             (lambda (_ _) nil))
                (enable-paredit-mode))))
 
-;; Probably don't need these now they are installed by package manager
-;; (require 'scss-mode)
-;; (require 'sws-mode)
-;; (require 'jade-mode)
-;; (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (add-to-list 'auto-mode-alist '("\.rake$" . ruby-mode))
 
@@ -98,8 +83,6 @@
 (setq web-mode-enable-auto-pairing t)
 (setq web-mode-enable-auto-closing t)
 
-;; (require 'json-mode)
-
 (autoload 'applescript-mode "applescript-mode" "Major mode for editing AppleScript source." t)
 (add-to-list 'auto-mode-alist '("\\.applescript$" . applescript-mode))
 
@@ -117,36 +100,6 @@
 (setq dired-dwim-target t)
 
 (setq default-tab-width 2)
-(setq cider-repl-history-file "~/.cider-history")
-(setq cider-prompt-for-symbol nil)
-(setq cider-show-error-buffer nil)
-(setq clojure-indent-style :always-indent)
-(setq cider-cljs-lein-repl
-      "(do (require 'figwheel-sidecar.repl-api)
-           (figwheel-sidecar.repl-api/start-figwheel!)
-           (figwheel-sidecar.repl-api/cljs-repl))")
-;; Colourize all fns known to be defined, not just clojure core
-;; might want to add deprecated to the list?
-(setq cider-font-lock-dynamically '(macro core function var deprecated))
-
-(define-clojure-indent
-  (defroutes 'defun)
-  (GET 2)
-  (POST 2)
-  (PUT 2)
-  (DELETE 2)
-  (HEAD 2)
-  (ANY 2)
-  (OPTIONS 2)
-  (PATCH 2)
-  (rfn 2)
-  (let-routes 1)
-  (context 2)
-  (-> 1)
-  (->> 1)
-  (as-> 1)
-  (some-> 1)
-  (some->> 1))
 
 ;; Cleanup ibuffer display so I can tell which file is which
 (setq ibuffer-formats '((mark modified read-only git-status-mini " "
@@ -157,8 +110,8 @@
 ;; bookmark list columns
 (setq bookmark-bmenu-file-column 50)
 
-;; Highlight the cursor on focus. Can make it hard to read the current line.
-;;(beacon-mode 1)
+;; Highlight the cursor on scroll. Can make it hard to read the current line.
+(beacon-mode 1)
 
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))
