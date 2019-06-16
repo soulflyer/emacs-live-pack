@@ -112,6 +112,12 @@
 
 ;; Highlight the cursor on scroll. Can make it hard to read the current line.
 (beacon-mode 1)
+(setq beacon-size 60)
+(setq beacon-color "yellow")
+(setq beacon-blink-delay 0.3)
+(setq beacon-blink-duration 1)
+(setq beacon-dont-blink-major-modes '(cider-repl-mode))
+(setq beacon-blink-when-window-scrolls t)
 
 (autoload 'muttrc-mode "muttrc-mode.el" "Major mode to edit muttrc files" t)
 (setq auto-mode-alist (append '(("muttrc\\'" . muttrc-mode)) auto-mode-alist))

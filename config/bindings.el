@@ -81,11 +81,12 @@
 ;;   (function
 ;;    (lambda nil (interactive) (dired-single-buffer ".."))))
 
-(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-backward-input)
-(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
-
+(define-key cider-repl-mode-map (kbd "<up>")    'cider-repl-backward-input)
+(define-key cider-repl-mode-map (kbd "<down>")  'cider-repl-next-input)
 (define-key cider-repl-mode-map (kbd "C-c C-c") 'cider-repl-kill-input)
-(define-key cider-repl-mode-map (kbd "C-c h") 'cider-browse-ns-all)
+(define-key cider-repl-mode-map (kbd "C-c h")   'cider-browse-ns-all)
+(define-key cider-repl-mode-map (kbd "C-c x")   'cider-refresh)
+(define-key cider-repl-mode-map (kbd "C-c q")   'cider-quit)
 
 (define-key js2-mode-map   (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key ruby-mode-map  (kbd "RET") 'reindent-then-newline-and-indent)
@@ -140,11 +141,10 @@
 (define-key diw-minor-mode-map  (kbd "C-c l o") (lambda () (interactive) (org-open-at-point t)))
 (define-key diw-minor-mode-map  (kbd "C-M-_")   'undo-tree-visualize)
 (define-key diw-minor-mode-map  (kbd "C-_")     'undo-tree-undo)
-;; TODO move these into the clojure-mode-map
 (define-key diw-minor-mode-map  (kbd "C-c C-j") 'cider-jack-in)
 (define-key diw-minor-mode-map  (kbd "C-c M-j") 'cider-jack-in-clojurescript)
-(define-key diw-minor-mode-map  (kbd "C-c c")   'cider-connect)
-(define-key diw-minor-mode-map  (kbd "C-c q")   'cider-quit)
+(define-key diw-minor-mode-map  (kbd "C-c M-c") 'cider-connect)
+
 
 (define-minor-mode diw-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"
