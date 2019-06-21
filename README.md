@@ -1,5 +1,8 @@
 ## Iain's pack
 
+### DEPRECATED
+This is now included in https://github.com/soulflyer/emacs-live
+
 ### Changes to emacs-live
 
 In order for the one window only thing to work, popwin must not be 
